@@ -12,6 +12,9 @@ isbn=0
 for i in range(len(isbn_n)):
     isbn+=int(isbn_n[i])*(i+1)
 if isbn%11==int(isbn_w[-1]):
+    jg="Right"
     print("Right")
 else:
+    jg=isbn_w[0]+"-"+isbn_w[1:4]+"-"+isbn_w[4:9]+"-"+str(isbn%11)
     print(isbn_w[0]+"-"+isbn_w[1:4]+"-"+isbn_w[4:9]+"-"+str(isbn%11))
+output_file=open("isbn.out",mode="w").write(jg)
