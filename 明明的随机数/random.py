@@ -1,11 +1,12 @@
-input_file=open("random.in",mode="r")
-output_list=list(set(input_file.read().split("\n")[1].split(" ")))
-for i in range(len(output_list)):
-    output_list[i]=int(output_list[i])
-output_list.sort()
-output=str(len(output_list))+"\n"
-for i in output_list:
+input_f=open("./random.in","r").read()
+i_l=input_f.split("\n")[0]
+i_n=input_f.split("\n")[1]
+i_n=i_n.split(" ")
+for i in range(len(i_n)):
+    i_n[i]=int(i_n[i])
+i_n=list(set(i_n))
+i_n.sort()
+output=str(len(i_n))+"\n"
+for i in i_n:
     output+=str(i)+" "
-print(output)
-output_file=open("random.out",mode="w")
-output_file.write(output)
+output_f=open("./random.out","w").write(output)

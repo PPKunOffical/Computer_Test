@@ -1,20 +1,20 @@
-input_file=open("isbn.in",mode="r").read().split("-")
-isbn=""
-isbn_w=""
-for i in input_file:
-    isbn_w+=i
-    if i != input_file[-1]:
-        isbn+=i
-isbn_n=[]
-for i in range(len(isbn)):
-    isbn_n.append(isbn[i])
-isbn=0
-for i in range(len(isbn_n)):
-    isbn+=int(isbn_n[i])*(i+1)
-if isbn%11==int(isbn_w[-1]):
-    jg="Right"
-    print("Right")
+a=open("./isbn.in","r").read()
+b=a[:12]
+c=0
+d=1
+for i in b:
+    if i!='-':
+        e=int(i)
+        c=c+e*d
+        d+=1
+g=c%11
+if g==10:
+    h='X'
 else:
-    jg=isbn_w[0]+"-"+isbn_w[1:4]+"-"+isbn_w[4:9]+"-"+str(isbn%11)
-    print(isbn_w[0]+"-"+isbn_w[1:4]+"-"+isbn_w[4:9]+"-"+str(isbn%11))
-output_file=open("isbn.out",mode="w").write(jg)
+    h=str(g)
+if h==a[12]:
+    jg="Right"
+else:
+    b=b+h
+    jg=b
+output_f=open("./isbn.out","w").write(jg)
