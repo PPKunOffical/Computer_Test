@@ -5,16 +5,19 @@ all_n=[]
 sx_n=[]
 c_n=len(s_n)
 x_n=0
+#第一次for循环把所有数字加起来
 for i in s_n:
     for x in s_n:
         if x_n<c_n:
             all_n.append(str(int(i)+int(x))+" "+str(i)+" "+str(x))
         x_n+=1
+#第二次for循环去除不在列表里的数字
 for i in all_n:
     s=i.split(" ")[0]
     for x in s_n:
         if s == x:
             sx_n.append(i)
+#第三次for循环比较大小
 for i in sx_n:
     n=int(i.split(" ")[0])
     n_o=int(i.split(" ")[1])
